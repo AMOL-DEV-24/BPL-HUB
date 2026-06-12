@@ -5,6 +5,4 @@ export default function PointsPage() {
       <p>Team rankings and stats</p>
     </div>
   );
-}export default function PointsTable() {
-  return <h1>Points Table</h1>;
 }

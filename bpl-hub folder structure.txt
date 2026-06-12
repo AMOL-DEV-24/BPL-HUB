@@ -1,0 +1,308 @@
+src/
+│
+├── app/
+│
+│   ├── layout.tsx                          # ROOT LAYOUT (Redux + Providers + SCSS)
+│   ├── page.tsx                            # LANDING / HOME PAGE
+│   ├── globals.scss                        # imports main.scss
+│
+│
+│   ├── (auth)/
+│   │
+│   │   ├── layout.tsx                      # AUTH WRAPPER
+│   │   └── login/
+│   │       └── page.tsx                    # LOGIN PAGE
+│
+│
+│   ├── (dashboard)/
+│   │
+│   │   ├── layout.tsx                      # SIDEBAR + HEADER WRAPPER
+│   │
+│   │   ├── dashboard/
+│   │   │   └── page.tsx
+│   │
+│   │   ├── player-management/
+│   │   │   ├── page.tsx
+│   │   │   ├── add/page.tsx
+│   │   │   ├── edit/[playerId]/page.tsx
+│   │   │   └── [playerId]/page.tsx
+│   │
+│   │   ├── team-management/
+│   │   │   ├── page.tsx
+│   │   │   ├── create/page.tsx
+│   │   │   └── [teamId]/page.tsx
+│   │
+│   │   ├── tournament-management/
+│   │   │   └── page.tsx
+│   │
+│   │   ├── match-management/
+│   │   │   ├── page.tsx
+│   │   │   ├── create/page.tsx
+│   │   │   ├── live-score/page.tsx
+│   │   │   └── [matchId]/page.tsx
+│   │
+│   │   ├── points-table/
+│   │   │   └── page.tsx
+│   │
+│   │   ├── payments/                        # 💰 REPLACES registration-codes
+│   │   │   ├── page.tsx                     # all payments list
+│   │   │   ├── create/page.tsx              # create payment link/order
+│   │   │   ├── verify/page.tsx              # verify Razorpay payment
+│   │   │   ├── history/page.tsx             # payment history
+│   │   │   └── [paymentId]/page.tsx
+│   │
+│   │   ├── sponsors/
+│   │   │   └── page.tsx
+│   │
+│   │   ├── gallery/
+│   │   │   └── page.tsx
+│   │
+│   │   ├── announcements/
+│   │   │   └── page.tsx
+│   │
+│   │   ├── settings/
+│   │   │   └── page.tsx
+│   │
+│   │   └── profile/
+│   │       └── page.tsx
+│
+│
+├── features/
+│
+│   ├── auth/
+│   │   └── login/
+│   │       ├── LoginForm.tsx
+│   │       ├── login.service.ts
+│   │       └── login.schema.ts
+│
+│   ├── dashboard/
+│   │   ├── components/
+│   │   ├── hooks/
+│   │   └── dashboard.service.ts
+│
+│   ├── players/
+│   │   ├── components/
+│   │   ├── hooks/
+│   │   ├── services/
+│   │   └── types/
+│
+│   ├── teams/
+│   │   ├── components/
+│   │   ├── hooks/
+│   │   ├── services/
+│   │   └── types/
+│
+│   ├── matches/
+│   │   ├── components/
+│   │   ├── hooks/
+│   │   ├── services/
+│   │   └── types/
+│
+│   ├── pointsTable/
+│   │   ├── components/
+│   │   ├── hooks/
+│   │   └── types/
+│
+│   ├── payments/                          # 💰 NEW CORE SYSTEM
+│   │   ├── components/
+│   │   │   ├── PaymentTable.tsx
+│   │   │   ├── PaymentForm.tsx
+│   │   │   └── PaymentStatus.tsx
+│   │   ├── hooks/
+│   │   │   ├── usePayments.ts
+│   │   │   └── useVerifyPayment.ts
+│   │   ├── services/
+│   │   │   └── razorpay.service.ts
+│   │   └── types/
+│   │       └── payment.types.ts
+│
+│   ├── sponsors/
+│   ├── gallery/
+│   └── announcements/
+│
+│
+├── components/
+│
+│   ├── layout/
+│   │   ├── Sidebar.tsx
+│   │   ├── Header.tsx
+│   │   ├── DashboardLayout.tsx
+│   │   └── MobileDrawer.tsx
+│
+│   ├── ui/
+│   │   ├── Button.tsx
+│   │   ├── Input.tsx
+│   │   ├── Modal.tsx
+│   │   ├── Table.tsx
+│   │   ├── Card.tsx
+│   │   ├── Loader.tsx
+│   │   └── Badge.tsx
+│
+│   ├── charts/
+│   └── common/
+│
+│
+├── redux/
+│
+│   ├── store.ts
+│   ├── hooks.ts
+│
+│   ├── api/
+│   │   └── baseApi.ts
+│
+│   └── features/
+│       ├── auth/
+│       ├── dashboard/
+│       ├── players/
+│       ├── teams/
+│       ├── matches/
+│       ├── payments/                     # 💰 IMPORTANT
+│       ├── pointsTable/
+│       ├── sponsors/
+│       ├── gallery/
+│       └── announcements/
+│
+│
+├── providers/
+│   ├── ReduxProvider.tsx
+│   ├── ThemeProvider.tsx
+│   └── SocketProvider.tsx
+│
+│
+├── lib/
+│   ├── mongodb.ts                        # DB CONNECTION
+│   ├── razorpay.ts                       # PAYMENT CONFIG
+│   └── utils.ts
+│
+│
+├── hooks/
+├── config/
+├── constants/
+├── types/
+│
+│
+├── styles/
+│
+│   ├── settings/
+│   ├── tools/
+│   ├── base/
+│   ├── layout/
+│   ├── components/
+│   ├── features/
+│   │   ├── auth/
+│   │   ├── dashboard/
+│   │   ├── players/
+│   │   ├── matches/
+│   │   ├── payments/                  # 💰 NEW
+│   │   └── global.scss
+│   │
+│   ├── utilities/
+│   └── main.scss
+│
+│
+├── middleware.ts
+└── next.config.js
+
+
+🚀 🏢 INDUSTRY-LEVEL SCSS ARCHITECTURE
+✅ BEST PRACTICE: “FEATURE + LAYER HYBRID”
+📁 1. FINAL STYLES STRUCTURE
+styles/
+│
+├── main.scss              ← ROOT ENTRY (ONLY IMPORTS)
+│
+├── settings/              ← DESIGN SYSTEM (NO UI)
+│   ├── _variables.scss
+│   ├── _breakpoints.scss
+│   ├── _colors.scss
+│   └── _typography.scss
+│
+├── tools/                 ← MIXINS / FUNCTIONS
+│   ├── _mixins.scss
+│   └── _functions.scss
+│
+├── base/                  ← GLOBAL RESET
+│   ├── _reset.scss
+│   ├── _global.scss
+│   └── _layout.scss
+│
+├── components/           ← REUSABLE UI (BUTTON, TABLE, MODAL)
+│   ├── _button.scss
+│   ├── _input.scss
+│   ├── _table.scss
+│   ├── _badge.scss
+│   └── _modal.scss
+│
+├── layout/               ← APP LAYOUT (SIDEBAR, HEADER)
+│   ├── _sidebar.scss
+│   ├── _header.scss
+│   └── _admin-layout.scss
+│
+├── features/             ← PAGE SPECIFIC STYLES
+│   │
+│   ├── auth/
+│   │   └── _login.scss
+│   │
+│   ├── dashboard/
+│   │   └── _dashboard.scss
+│   │
+│   ├── players/
+│   │   └── _players.scss
+│   │
+│   ├── teams/
+│   │   └── _teams.scss
+│   │
+│   ├── matches/
+│   │   └── _matches.scss
+│   │
+│   ├── payments/
+│   │   └── _payments.scss
+│   │
+│   ├── points-table/
+│   │   └── _points.scss
+│   │
+│   ├── gallery/
+│   │   └── _gallery.scss
+│   │
+│   └── announcements/
+│       └── _announcements.scss
+│
+└── utils/                ← HELPERS
+    ├── _helpers.scss
+    └── _animations.scss
+
+
+sidebar
+📊 Dashboard
+
+👥 Player Management
+   ├── All Players
+   ├── Add Player
+   └── Registration Requests
+
+🏏 Team Management
+   ├── Teams
+   └── Create Team
+
+🏆 Tournament Management
+   ├── Tournament
+   └── Settings
+
+📅 Match Management
+   ├── Matches
+   ├── Create Match
+   └── Live Score
+
+📈 Points Table
+
+🔑 Registration Codes
+
+🖼 Gallery Management
+
+🤝 Sponsors
+
+📢 Announcements
+
+⚙ Settings
+
+👤 Profile

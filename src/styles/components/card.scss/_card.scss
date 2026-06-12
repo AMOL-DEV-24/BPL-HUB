@@ -1,0 +1,8 @@
+@use "../settings/variables" as *;
+
+.card {
+  background: $surface;
+  padding: 20px;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-md;
+}

@@ -1,0 +1,70 @@
+/* =========================================================
+   BPL HUB - MAIN SCSS ENTRY FILE
+   ---------------------------------------------------------
+   Only imports are handled here.
+   No direct styling allowed (clean architecture rule)
+========================================================= */
+
+/* =========================================================
+   DESIGN SYSTEM (TOKENS + VARIABLES)
+========================================================= */
+
+@use "./settings/breakpoints";
+@use "./settings/variables";
+@use "./settings/typography";
+
+/* =========================================================
+   TOOLS (MIXINS + FUNCTIONS)
+========================================================= */
+
+@use "./tools/mixins";
+@use "./tools/functions";
+
+/* =========================================================
+   BASE STYLES (GLOBAL APP FOUNDATION)
+========================================================= */
+
+@use "./base/reset";
+@use "./base/global";
+
+/* =========================================================
+   UTILITIES (HELPER CLASSES)
+========================================================= */
+
+@use "./utils/helpers";
+
+/* =========================================================
+   STATUS SYSTEM (PAYMENT / ORDER / USER STATUS)
+   -----------------------------------------------
+   WHY THIS FOLDER EXISTS:
+   - Centralized status styling for consistency
+   - Easy updates to status colors/text/borders
+   - Reusable status badges across the app
+========================================================= */
+@use "./status/status-index";
+
+
+/* =========================================================
+   COMPONENTS (REUSABLE UI ELEMENTS)
+========================================================= */
+// @use "./components/button";
+@use "./components/sidebar/sidebar";
+@use "./components/mobileDrawer/mobile-drawer";
+@use "./components/mobileTopbar/mobile-topbar";
+@use "./components/ui/Table/table";
+@use "./components/ui/Pagination/pagination";
+
+/* =========================================================
+   LAYOUTS (PAGE STRUCTURE)
+========================================================= */
+@use "./layout/authLayout";
+@use "./layout/dashboardLayout";
+
+
+/* =========================================================
+   modules (PAGE-SPECIFIC STYLES)
+========================================================= */
+@use "./modules/auth/login";
+@use "./modules/dashboard/dashboard";
+@use "./modules//paymentMangement/paymentManagement";
+@use "./modules/playerManagement/playerManagement";

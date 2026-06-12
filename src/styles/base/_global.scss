@@ -1,0 +1,62 @@
+/* =========================================================
+   BPL HUB - GLOBAL STYLES
+========================================================= */
+
+@use "../settings/variables" as *;
+
+/* BODY */
+body {
+  margin: 0;
+  padding: 0;
+
+  background: $background;
+  color: $text-primary;
+
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+
+  font-size: 16px;
+  line-height: 1.5;
+
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  overflow-x: hidden; /* FIX MOBILE SCROLL ISSUE */
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $primary;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: $secondary;
+}
+
+/* SELECTION */
+::selection {
+  background: $primary;
+  color: #000;
+}
+
+/* HEADINGS */
+h1, h2, h3, h4, h5 {
+  font-weight: 600;
+  margin: 0;
+}
+
+/* PARAGRAPH */
+p {
+  margin: 0;
+  color: $text-secondary;
+}
+
+/* ROOT */
+#root,
+#__next {
+  height: 100%;
+}

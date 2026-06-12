@@ -1,0 +1,23 @@
+@use "../settings/variables" as *;
+
+.btn {
+  padding: 10px 16px;
+  border-radius: $radius-md;
+  font-weight: $medium;
+  cursor: pointer;
+  transition: $transition-normal;
+}
+
+.btn-primary {
+  background: $primary;
+  color: black;
+
+  &:hover {
+    background: $primary-dark;
+  }
+}
+
+.btn-danger {
+  background: $error;
+  color: white;
+}

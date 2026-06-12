@@ -1,0 +1,84 @@
+/* =========================================================
+   BPL HUB - DESIGN SYSTEM VARIABLES
+   (Colors, spacing, typography, UI tokens)
+========================================================= */
+
+/* ===================== COLORS ===================== */
+
+$primary: #ffcc00;
+$primary-dark: #e6b800;
+
+$secondary: #111111;
+$background: #0d0d0d;
+$surface: #1a1a1a;
+
+$text-primary: #ffffff;
+$text-secondary: #b5b5b5;
+$text-muted: #777777;
+
+$border: rgba(255, 255, 255, 0.08);
+
+/* ===================== STATUS COLORS ===================== */
+
+$success: #22c55e;
+$error: #ef4444;
+$warning: #f59e0b;
+$info: #3b82f6;
+
+/* ===================== SPACING SYSTEM ===================== */
+
+$space-1: 4px;
+$space-2: 8px;
+$space-3: 12px;
+$space-4: 16px;
+$space-5: 20px;
+$space-6: 24px;
+$space-7: 32px;
+$space-8: 40px;
+$space-9: 48px;
+$space-10: 64px;
+
+/* ===================== BORDER RADIUS ===================== */
+
+$radius-sm: 6px;
+$radius-md: 12px;
+$radius-lg: 18px;
+$radius-xl: 24px;
+$radius-round: 999px;
+
+/* ===================== TYPOGRAPHY ===================== */
+
+$font-xs: 12px;
+$font-sm: 14px;
+$font-md: 16px;
+$font-lg: 18px;
+$font-xl: 22px;
+$font-2xl: 28px;
+$font-3xl: 36px;
+
+/* Font weights */
+$regular: 400;
+$medium: 500;
+$semi-bold: 600;
+$bold: 700;
+
+/* ===================== SHADOWS ===================== */
+
+$shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.15);
+$shadow-md: 0 6px 18px rgba(0, 0, 0, 0.25);
+$shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.35);
+$shadow-xl: 0 15px 50px rgba(0, 0, 0, 0.5);
+
+/* ===================== Z-INDEX ===================== */
+
+$z-dropdown: 1000;
+$z-sticky: 1100;
+$z-sidebar: 1200;
+$z-modal: 1300;
+$z-toast: 1400;
+
+/* ===================== TRANSITIONS ===================== */
+
+$transition-fast: 0.15s ease;
+$transition-normal: 0.3s ease;
+$transition-slow: 0.5s ease;

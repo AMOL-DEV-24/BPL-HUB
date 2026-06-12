@@ -1,0 +1,55 @@
+/* =========================================================
+   MOBILE TOPBAR — visible only on mobile
+========================================================= */
+
+@use "../../settings/breakpoints" as *;
+
+.mobile-topbar {
+  display: none;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+
+  height: 56px;
+  padding: 0 16px;
+
+  align-items: center;
+  justify-content: space-between;
+
+  background: rgba(11, 15, 25, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  color: #fff;
+
+  &__hamburger {
+    font-size: 22px;
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: background 0.2s;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.08);
+    }
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 1px;
+  }
+}
+
+/* Show only on mobile */
+@include md {
+  .mobile-topbar {
+    display: flex;
+  }
+}

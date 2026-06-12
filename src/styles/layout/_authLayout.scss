@@ -1,0 +1,19 @@
+/* =========================================================
+   AUTH LAYOUT WRAPPER
+========================================================= */
+
+/* FULL SCREEN CONTAINER */
+.auth-layout {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* INNER WRAPPER */
+.auth-wrapper {
+  width: 100%;
+}

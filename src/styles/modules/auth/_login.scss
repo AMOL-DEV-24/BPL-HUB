@@ -1,0 +1,211 @@
+/* =========================================================
+   BPL HUB - AUTH LOGIN (GLOBAL SCSS)
+   STYLE: SaaS / Stripe inspired UI
+========================================================= */
+
+@use "../../settings/breakpoints" as *;
+
+/* ===================== CONTAINER ===================== */
+
+.auth-container {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  overflow: hidden;
+
+  background: radial-gradient(circle at top, #0f172a, #000);
+}
+
+/* ===================== BACKGROUND GLOWS ===================== */
+
+.auth-glow {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  filter: blur(120px);
+  opacity: 0.25;
+  z-index: 0;
+}
+
+.auth-glow-1 {
+  background: #00ffcc;
+  top: -120px;
+  left: -120px;
+}
+
+.auth-glow-2 {
+  background: #7c3aed;
+  bottom: -120px;
+  right: -120px;
+}
+
+/* ===================== BRAND WATERMARK ===================== */
+
+.auth-brand {
+  position: absolute;
+
+  font-size: 180px;
+  font-weight: 900;
+
+  color: rgba(255, 255, 255, 0.03);
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  letter-spacing: 25px;
+
+  user-select: none;
+  z-index: 0;
+}
+
+/* ===================== LOGIN CARD ===================== */
+
+.auth-card {
+  width: 520px;
+  max-width: 92vw;
+
+  padding: 50px;
+
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  z-index: 1;
+}
+
+/* ===================== TITLE ===================== */
+
+.auth-title {
+  font-size: 30px;
+  font-weight: 800;
+  color: #fff;
+  text-align: center;
+}
+
+/* ===================== SUBTITLE ===================== */
+
+.auth-subtitle {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+}
+
+/* ===================== FORM ===================== */
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.auth-group {
+  display: flex;
+  flex-direction: column;
+
+  input {
+    padding: 14px;
+    border-radius: 12px;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+
+    outline: none;
+
+    transition: 0.25s ease;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    &:focus {
+      border-color: #00ffcc;
+      box-shadow: 0 0 0 3px rgba(0, 255, 204, 0.15);
+    }
+  }
+}
+
+.auth-error {
+  font-size: 12px;
+  color: #ff4d4d;
+  margin-top: 5px;
+}
+
+/* ===================== BUTTON ===================== */
+
+.auth-button {
+  padding: 14px;
+
+  border: none;
+  border-radius: 12px;
+
+  font-weight: 700;
+  cursor: pointer;
+
+  background: linear-gradient(135deg, #00ffcc, #7c3aed);
+  color: #000;
+
+  transition: 0.3s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+}
+
+/* ===================== FOOTER ===================== */
+
+.auth-footer {
+  text-align: center;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* ===================== RESPONSIVE ===================== */
+
+@include md {
+  .auth-card {
+    width: 420px;
+    padding: 40px;
+  }
+
+  .auth-brand {
+    font-size: 130px;
+  }
+}
+
+@include sm {
+  .auth-card {
+    width: 360px;
+  }
+}
+
+@include xs {
+  .auth-card {
+    width: 320px;
+    padding: 25px;
+  }
+}
+
+@include xxs {
+  .auth-card {
+    width: 300px;
+    padding: 22px;
+  }
+}

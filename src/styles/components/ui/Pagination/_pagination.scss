@@ -1,0 +1,254 @@
+@use "../../../settings/breakpoints" as *;
+
+/* =========================================================
+   PAGINATION
+========================================================= */
+
+.pagination {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-top: 24px;
+
+  width: 100%;
+}
+
+/* =========================================================
+   LEFT INFO
+========================================================= */
+
+.pagination__info {
+  flex: 1;
+
+  font-size: 14px;
+
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* =========================================================
+   CENTER
+========================================================= */
+
+.pagination__controls {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.pagination__pages {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.pagination__button {
+  padding: 10px 16px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  color: #fff;
+
+  cursor: pointer;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  transition: all 0.2s ease;
+
+  &:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  &:disabled {
+    opacity: 0.4;
+
+    cursor: not-allowed;
+  }
+}
+
+.pagination__page {
+  width: 38px;
+
+  height: 38px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  color: white;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+}
+
+.pagination__page--active {
+  background: linear-gradient(
+    135deg,
+    #00ffcc,
+    #7c3aed
+  );
+
+  color: #000;
+}
+
+/* =========================================================
+   RIGHT INFO
+========================================================= */
+
+.pagination__footer {
+  flex: 1;
+
+  text-align: right;
+
+  font-size: 14px;
+
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* =========================================================
+   XXL (1400px)
+========================================================= */
+
+@include xxl {
+
+  .pagination {
+    gap: 24px;
+  }
+}
+
+/* =========================================================
+   XL (1200px)
+========================================================= */
+
+@include xl {
+
+  .pagination__button {
+    padding: 10px 14px;
+  }
+}
+
+/* =========================================================
+   LG (992px)
+========================================================= */
+
+@include lg {
+
+  .pagination {
+    flex-wrap: wrap;
+
+    justify-content: center;
+  }
+
+  .pagination__info,
+  .pagination__footer {
+    flex: unset;
+
+    width: 100%;
+
+    text-align: center;
+  }
+}
+
+/* =========================================================
+   MD (768px)
+========================================================= */
+
+@include md {
+
+  .pagination {
+    flex-direction: column;
+  }
+
+  .pagination__controls {
+    flex-wrap: wrap;
+
+    justify-content: center;
+  }
+}
+
+/* =========================================================
+   SM (576px)
+========================================================= */
+
+@include sm {
+
+  .pagination__button {
+    font-size: 12px;
+
+    padding: 8px 12px;
+  }
+
+  .pagination__page {
+    width: 34px;
+
+    height: 34px;
+  }
+}
+
+/* =========================================================
+   XS (420px)
+========================================================= */
+
+@include xs {
+
+  .pagination__controls {
+    gap: 6px;
+  }
+
+  .pagination__pages {
+    gap: 4px;
+  }
+
+  .pagination__page {
+    width: 30px;
+
+    height: 30px;
+
+    font-size: 11px;
+  }
+}
+
+/* =========================================================
+   XXS (360px)
+========================================================= */
+
+@include xxs {
+
+  .pagination__button {
+    font-size: 11px;
+
+    padding: 6px 10px;
+  }
+
+  .pagination__info,
+  .pagination__footer {
+    font-size: 12px;
+  }
+}

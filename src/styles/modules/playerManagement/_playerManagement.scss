@@ -1,0 +1,353 @@
+@use "../../settings/breakpoints" as *;
+
+/* =========================================================
+   PLAYER MANAGEMENT
+========================================================= */
+
+.players-container {
+  padding: 32px 28px;
+  min-height: 100vh;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.players-header {
+  margin-bottom: 32px;
+
+  &__title {
+    margin: 0 0 6px;
+
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  &__sub {
+    margin: 0;
+
+    font-size: 13px;
+
+    color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.players-stats {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 16px;
+
+  margin-bottom: 24px;
+}
+
+.players-stat {
+  padding: 20px;
+
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  border: 1px solid rgba(255, 255, 255, 0.06);
+
+  transition: all 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  span {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  h3 {
+    margin: 0;
+
+    font-size: 28px;
+    font-weight: 700;
+  }
+}
+
+/* =========================================================
+   PLAYER CELL
+========================================================= */
+
+.players-player {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  min-width: 0;
+
+  img {
+    width: 44px;
+    height: 44px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    flex-shrink: 0;
+  }
+
+  div {
+    min-width: 0;
+  }
+
+  strong,
+  small {
+    display: block;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+  }
+}
+
+/* =========================================================
+   JERSEY
+========================================================= */
+
+.players-jersey {
+  color: #00ffcc;
+  font-weight: 700;
+}
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.players-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.approve-btn,
+.reject-btn {
+  border: none;
+
+  padding: 8px 14px;
+
+  border-radius: 8px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+
+  white-space: nowrap;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.approve-btn {
+  background: rgba(34, 197, 94, 0.15);
+
+  color: #22c55e;
+
+  border: 1px solid rgba(34, 197, 94, 0.3);
+
+  &:hover:not(:disabled) {
+    background: rgba(34, 197, 94, 0.25);
+    transform: translateY(-1px);
+  }
+}
+
+.reject-btn {
+  background: rgba(239, 68, 68, 0.15);
+
+  color: #ef4444;
+
+  border: 1px solid rgba(239, 68, 68, 0.3);
+
+  &:hover:not(:disabled) {
+    background: rgba(239, 68, 68, 0.25);
+    transform: translateY(-1px);
+  }
+}
+/* =========================================================
+   XXL (1400px)
+========================================================= */
+
+@include xxl {
+  .players-container {
+    padding: 36px 32px;
+  }
+
+  .players-header {
+    margin-bottom: 36px;
+
+    &__title {
+      font-size: 26px;
+    }
+  }
+
+  .players-stat {
+    padding: 24px;
+
+    h3 {
+      font-size: 30px;
+    }
+  }
+}
+
+/* =========================================================
+   XL (1200px)
+========================================================= */
+
+@include xl {
+  .players-stats {
+    gap: 14px;
+  }
+}
+
+/* =========================================================
+   LG (992px)
+========================================================= */
+
+@include lg {
+  .players-container {
+    padding: 24px 20px;
+  }
+
+  .players-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =========================================================
+   MD (768px)
+========================================================= */
+
+@include md {
+  .players-container {
+    padding: 20px 16px;
+  }
+
+  .players-header {
+    margin-bottom: 24px;
+  }
+
+  .players-stats {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 12px;
+  }
+
+  .players-stat {
+    padding: 18px;
+
+    h3 {
+      font-size: 24px;
+    }
+  }
+
+  .players-actions {
+    flex-direction: column;
+    align-items: stretch;
+
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   SM (576px)
+========================================================= */
+
+@include sm {
+  .players-container {
+    padding: 16px 14px;
+  }
+
+  .players-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .players-player {
+    gap: 10px;
+  }
+}
+
+/* =========================================================
+   XS (420px)
+========================================================= */
+
+@include xs {
+  .players-header {
+    &__title {
+      font-size: 20px;
+    }
+  }
+
+  .players-stat {
+    h3 {
+      font-size: 22px;
+    }
+  }
+}
+
+/* =========================================================
+   XXS (360px)
+========================================================= */
+
+@include xxs {
+  .players-container {
+    padding: 12px 10px;
+  }
+
+  .players-header {
+    &__title {
+      font-size: 18px;
+    }
+
+    &__sub {
+      font-size: 12px;
+    }
+  }
+
+  .players-stat {
+    padding: 16px;
+
+    span {
+      font-size: 11px;
+    }
+
+    h3 {
+      font-size: 20px;
+    }
+  }
+
+  .players-player {
+    gap: 8px;
+
+    img {
+      width: 38px;
+      height: 38px;
+    }
+  }
+}

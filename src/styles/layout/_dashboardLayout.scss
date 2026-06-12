@@ -1,0 +1,111 @@
+@use "../settings/breakpoints" as *;
+
+/* ===================== ROOT LAYOUT ===================== */
+
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #0b0f19;
+  color: #fff;
+}
+
+/* ===================== MAIN AREA ===================== */
+
+.dashboard-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  /* KEY FIX: push content right so it doesn't hide under the fixed sidebar */
+  margin-left: 260px;
+
+  transition: margin-left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===================== TOPBAR ===================== */
+
+.topbar {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  flex-shrink: 0;
+}
+
+.topbar input {
+  width: 300px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #111;
+  color: #fff;
+  outline: none;
+}
+
+/* ===================== PAGE CONTENT ===================== */
+
+.page-content {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+/* XXL (1400px+) */
+@include xxl {
+  .topbar input { width: 360px; }
+}
+
+/* XL (1200px) */
+@include xl {
+  .topbar input { width: 300px; }
+}
+
+/* LG (992px) — narrower sidebar */
+@include lg {
+  .dashboard-main {
+    margin-left: 210px; /* matches sidebar width at lg */
+  }
+
+  .topbar input { width: 240px; }
+}
+
+/* MD (768px) — sidebar becomes a drawer, topbar replaces it */
+@include md {
+  .dashboard-main {
+    margin-left: 0; /* sidebar is off-screen, no offset needed */
+  }
+
+  .topbar {
+    padding-left: 60px; /* space for the hamburger button */
+  }
+
+  .topbar input {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+/* SM (576px) */
+@include sm {
+  .page-content { padding: 16px; }
+}
+
+/* XS (480px) */
+@include xs {
+  .page-content { padding: 14px; }
+}
+
+/* XXS (360px) */
+@include xxs {
+  .page-content { padding: 10px; }
+}

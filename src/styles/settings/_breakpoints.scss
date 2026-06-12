@@ -1,0 +1,60 @@
+/* =========================================================
+   BREAKPOINT SYSTEM (CLEAN + PRODUCTION READY)
+   - Uses ONLY variables (no extra abstraction)
+========================================================= */
+
+/* ===================== BREAKPOINT VALUES ===================== */
+
+$xxl: 1400px;
+$xl: 1200px;
+$lg: 992px;
+$md: 768px;
+$sm: 576px;
+$xs: 420px;
+$xxs: 360px;
+
+/* =========================================================
+   RESPONSIVE MIXINS (USING VARIABLES DIRECTLY)
+========================================================= */
+
+@mixin xxl {
+  @media (max-width: $xxl) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (max-width: $xl) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (max-width: $lg) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (max-width: $md) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (max-width: $sm) {
+    @content;
+  }
+}
+
+@mixin xs {
+  @media (max-width: $xs) {
+    @content;
+  }
+}
+
+@mixin xxs {
+  @media (max-width: $xxs) {
+    @content;
+  }
+}

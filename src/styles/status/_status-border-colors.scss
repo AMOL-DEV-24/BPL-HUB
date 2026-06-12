@@ -1,0 +1,28 @@
+/* =========================================================
+   STATUS TEXT COLORS
+   USED FOR:
+   - Inline status labels
+========================================================= */
+
+.text-status {
+
+  &.success {
+    color: #00c853;
+  }
+
+  &.pending {
+    color: #ffb300;
+  }
+
+  &.failed {
+    color: #ff1744;
+  }
+
+  &.expired {
+    color: #616161;
+  }
+
+  &.primary {
+    color: #7c3aed;
+  }
+}

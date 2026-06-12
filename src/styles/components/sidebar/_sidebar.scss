@@ -1,0 +1,104 @@
+/* =========================================================
+   SIDEBAR — Desktop only (hidden on mobile via CSS)
+========================================================= */
+
+.sidebar {
+  width: 260px;
+  height: 100vh;
+
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(24px);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+
+  padding: 22px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  z-index: 100;
+}
+
+/* ---- Brand ---- */
+
+.sidebar-brand {
+  font-size: 18px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+/* ---- Menu ---- */
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ---- Item ---- */
+
+.sidebar-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 12px 14px;
+  border-radius: 12px;
+
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.25s ease;
+  overflow: hidden;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.06);
+    transform: translateX(4px);
+    color: #fff;
+  }
+
+  &__icon {
+    font-size: 18px;
+    transition: transform 0.2s ease;
+  }
+
+  &:hover &__icon {
+    transform: scale(1.2);
+  }
+
+  &.active {
+    background: linear-gradient(135deg, #00ffcc, #7c3aed);
+    color: #000;
+    font-weight: 700;
+  }
+
+  &__dot {
+    position: absolute;
+    right: 10px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #000;
+  }
+}
+
+/* ---- Responsive: hide on mobile ---- */
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none; /* MobileDrawer takes over */
+  }
+}
+
+/* ---- LG: slightly narrower ---- */
+
+@media (max-width: 992px) and (min-width: 769px) {
+  .sidebar {
+    width: 210px;
+  }
+}

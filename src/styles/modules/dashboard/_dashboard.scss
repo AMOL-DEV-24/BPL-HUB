@@ -1,0 +1,111 @@
+/* =========================================================
+   DASHBOARD HOME - BPL HUB ADMIN
+   STYLE: Modern SaaS UI (Clean + Scalable)
+========================================================= */
+
+@use "../../settings/breakpoints" as *;
+
+/* ===================== PAGE WRAPPER ===================== */
+
+.dashboard-home {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  color: #fff;
+}
+
+/* ===================== HEADER ===================== */
+
+.dashboard-header {
+  h1 {
+    font-size: 32px;
+    font-weight: 800;
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 6px;
+  }
+}
+
+/* ===================== GRID ===================== */
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+/* ===================== CARD ===================== */
+
+.dashboard-card {
+  padding: 18px;
+
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  transition: 0.3s ease;
+
+  cursor: pointer;
+
+  h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  p {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+  }
+}
+
+/* ===================== RESPONSIVE ===================== */
+
+/* XXL (1400px) */
+@include xxl {
+  .dashboard-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* XL (1200px) */
+@include xl {
+  .dashboard-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* LG (992px) */
+@include lg {
+  .dashboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* MD (768px) */
+@include md {
+  .dashboard-header h1 {
+    font-size: 28px;
+  }
+}
+
+/* SM (576px) */
+@include sm {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-header h1 {
+    font-size: 24px;
+  }
+}
